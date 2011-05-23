@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery ExpandText</title>
+<style>
+/**
+ * Be sure sure to set an average starting font size via CSS.
+ */
+.text { font-size: 80px; line-height: 1em }
+/* Demo only, you don't need these styles */
+body { font-family: Arial }
+.text { width: 20%; height: 100px; outline: 1px solid blue; margin: 10px; overflow: hidden; }
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="jquery.expandtext.js"></script>
+<script>
+/**
+ * Run the function on ready, and again when the document is resized.
+ */
+$(function(){
+	$(window).resize(function(){
+		$('.text').expandText();
+	}).trigger('resize');
+});
+</script>
+</head>
+<body>
+	<p>Try shrinking your window.</p>
+	<div class="text">1</div>
+	<div class="text">22</div>
+	<div class="text">333</div>
+	<div class="text">4444</div>
+	<div class="text">55555</div>
+</body>
+</html>

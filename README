@@ -1,0 +1,36 @@
+jQuery ExpandText
+By Michael Botsko 2011
+
+
+Introduction
+============================
+
+This plugin increases or decreases text size depending on the width and height of
+it's container. It works by wrapping the text in a span and measuring gradual font
+changes until the width/height hits the parent limits. Since we're not calculating
+string width it will work properly no matter what fonts are used.
+
+In this example, we run the calculation every time the window is resized but that
+can have a performance hit especially when there is a large difference between
+your minimum and maximum font sizes.
+
+
+Using
+============================
+
+Find an element and run:
+
+$('div').expandText();
+
+You can also pass in the minimum/maximum font sizes so things don't get out of
+control:
+
+$('div').expandText({
+	min: 20,
+	max: 80
+});
+
+If you want this attached to the window/document resize but need to throttle it,
+check out the jQuery Resize plugin which works perfectly:
+
+http://benalman.com/projects/jquery-resize-plugin/
